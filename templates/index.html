@@ -58,7 +58,7 @@
     <!-- End of Form -->
 
 
-     <!-- Inicio del Formulario de borrado de datos  -->
+    <!-- Inicio del Formulario de borrado de datos  -->
     <!--Formulario de borrar datos de toda la lista, del controlador borrar -->
     <form action="{{url_for('borrar')}}" method="POST" style="width: 35%; margin: 0 auto;">
         <!-- 4. Text de la tarea  de eliminar tarea -->
@@ -69,17 +69,60 @@
         </div>
     </form>
 
- <!-- FORMULARIO PARA Eliminar la tarea por el mombre -->
- <form action="" method="POST" style="width: 35%; margin: 0 auto;">
-    <!-- 4. Text de la tarea  de eliminar tarea -->
-    <div class="form-group">
-        <label for="idTarea">Eliminar Tarea por Nombre: </label>
-        <input type="text" class="form-control border border-secondary" id="idTarea" aria-describedby="idTarea"
-            placeholder="Nombre de la tarea">
-    </div>
-    <!-- 10. Submit Button de Eliminar tarea -->
-    <button type="submit" class="btn btn-success  p-2 my-3 bg-warning ">Eliminar Tarea</button>
-</form>
+    <!-- FORMULARIO PARA Eliminar la tarea por el mombre -->
+    <form action="" method="POST" style="width: 35%; margin: 0 auto;">
+        <!-- 4. Text de la tarea  de eliminar tarea -->
+        <div class="form-group">
+            <label for="idTarea">Eliminar Tarea por Nombre: </label>
+            <input type="text" class="form-control border border-secondary" id="idTarea" aria-describedby="idTarea"
+                placeholder="Nombre de la tarea">
+        </div>
+        <!-- 10. Submit Button de Eliminar tarea -->
+        <button type="submit" class="btn btn-success  p-2 my-3 bg-warning ">Eliminar Tarea</button>
+    </form>
+
+    <!--Div de mostrar la tabla el resultado -->
+    <table class="table" style="width: 60%; margin: 0 auto;">
+        <thead>
+            <tr>
+
+                <th scope="col"
+                    style="background-color: rgb(250, 186, 49); text-align: center; border-radius: 5px; color: whitesmoke;">
+                    Tarea</th>
+                <th scope="col"
+                    style="background-color: rgb(250, 186, 49); text-align: center; border-radius: 5px; color: whitesmoke;">
+                    Email</th>
+                <th scope="col"
+                    style="background-color: rgb(250, 186, 49); text-align: center; border-radius: 5px; color: whitesmoke;">
+                    Prioridad</th>
+            </tr>
+        </thead>
+        <tbody ">
+        <!--Se utiliza un for para el crear una lista en forma de tablas, tal como se ve a cotinuacion-->
+        {% for tablaTarea in ListasApp %}
+
+        <tr>
+
+            <!--Muestra los datos ingresados por el usuario -->
+            <th id=" el_name" style=" text-align: center; background-color: antiquewhite; text-align: center; border-radius:
+        5px;">{{tablaTarea.lista_Name}}</th>
+            <!--Mostrar correo de la tarea-->
+            <th id="el_email"
+                style="text-align: center; background-color: antiquewhite; text-align: center; border-radius: 5px;">
+                {{tablaTarea.lista_Email}}</th>
+            <!--Mostrar prioridad de la tarea-->
+            <th id="el_prioridad"
+                style="text-align: center; background-color: antiquewhite; text-align: center; border-radius: 5px;">
+                {{tablaTarea.lista_Prioridad}}</th>
+            </tr>
+
+            {% endfor %}
+            <!--Aqui termina el for de la tabla -->
+
+        </tbody>
+    </table>
+    <br>
+
 
 
 
