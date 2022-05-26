@@ -10,36 +10,35 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
- <!-- Script de Alerta para identificar y verificar que se haya guardado en la lista -->
- <script>
 
-    //este es para el mensaje de borrado de la lista en Javascript 
-    function ListaEliminada() {
-        var el_name = document.getElementById("el_name").value;
-        var el_email = document.getElementById("el_email").value;
-        var el_prioridad = document.getElementById("el_prioridad").value;
-        if (el_name == [] || el_name == [] || el_name == []) {
-            alert("No hay ningun elemento ");
-        } else {
-            alert('Todos los registros de la lista han sido Eliminados');
+    <!-- Script de Alerta para identificar y verificar que se haya guardado en la lista -->
+    <script>
+        //este es para el mensaje de borrado de la lista en Javascript 
+        function ListaEliminada() {
+            var el_name = document.getElementById("el_name").value;
+            var el_email = document.getElementById("el_email").value;
+            var el_prioridad = document.getElementById("el_prioridad").value;
+            if (el_name == [] || el_name == [] || el_name == []) {
+                alert("No hay ningun elemento ");
+            } else {
+                alert('Todos los registros de la lista han sido Eliminados');
+            }
+
         }
 
-    }
+        // Este es el mensaje de ngreso de datos a la lista de registros, para verificar que se guarden datos 
+        function validacionRegistro() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var singleselect = document.getElementById("singleselect").value;
+            if (username == [] || email == [] || singleselect == []) {
+                alert("Debes completar Todos los Campos para Guardar el Registro");
+            } else {
 
-    // Este es el mensaje de ngreso de datos a la lista de registros, para verificar que se guarden datos 
-    function validacionRegistro() {
-        var username = document.getElementById("username").value;
-        var email = document.getElementById("email").value;
-        var singleselect = document.getElementById("singleselect").value;
-        if (username == [] || email == [] || singleselect == []) {
-            alert("Debes completar Todos los Campos para Guardar el Registro");
-        } else {
-
-            alert('Datos registrados en la Lista');
+                alert('Datos registrados en la Lista');
+            }
         }
-    }
-</script>
-
+    </script>
 
 </head>
 
@@ -86,7 +85,6 @@
     <!-- End of Form -->
 
 
-    <!-- Inicio del Formulario de borrado de datos  -->
     <!--Formulario de borrar datos de toda la lista, del controlador borrar -->
     <form action="{{url_for('borrar')}}" method="POST" style="width: 35%; margin: 0 auto;">
         <!-- 4. Text de la tarea  de eliminar tarea -->
@@ -109,6 +107,8 @@
         <button type="submit" class="btn btn-success  p-2 my-3 bg-warning ">Eliminar Tarea</button>
     </form>
 
+
+
     <!--Div de mostrar la tabla el resultado -->
     <table class="table" style="width: 60%; margin: 0 auto;">
         <thead>
@@ -126,14 +126,14 @@
             </tr>
         </thead>
         <tbody ">
-        <!--Se utiliza un for para el crear una lista en forma de tablas, tal como se ve a cotinuacion-->
-        {% for tablaTarea in ListasApp %}
+            <!--Se utiliza un for para el crear una lista en forma de tablas, tal como se ve a cotinuacion-->
+            {% for tablaTarea in ListasApp %}
 
-        <tr>
+            <tr>
 
-            <!--Muestra los datos ingresados por el usuario -->
-            <th id=" el_name" style=" text-align: center; background-color: antiquewhite; text-align: center; border-radius:
-        5px;">{{tablaTarea.lista_Name}}</th>
+                <!--Muestra los datos ingresados por el usuario -->
+                <th id=" el_name" style=" text-align: center; background-color: antiquewhite; text-align: center; border-radius:
+            5px;">{{tablaTarea.lista_Name}}</th>
             <!--Mostrar correo de la tarea-->
             <th id="el_email"
                 style="text-align: center; background-color: antiquewhite; text-align: center; border-radius: 5px;">
@@ -150,9 +150,6 @@
         </tbody>
     </table>
     <br>
-
-
-
 
     <!--Este es el footer de nuestro archivo -->
     <footer class="bg-dark text-center text-white">
