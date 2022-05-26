@@ -24,5 +24,4 @@ def panelPrincipal():   # es la ruta principal del primer controlador raiz
 
 # ejecutar del main principal de la pagina To DO local host 
 if __name__ == '__main__':
-
     app.run(debug=True)
