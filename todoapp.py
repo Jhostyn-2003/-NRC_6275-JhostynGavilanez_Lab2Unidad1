@@ -20,6 +20,31 @@ app.secret_key = 'jhostyn2022'
 def panelPrincipal():   # es la ruta principal del primer controlador raiz
     return render_template('/index.html', ListasApp=ListasApp)
 
+#---------------------------------------------------------------------------
+# Este es el segundo paso para enviar datos a nuestra lista mediante el formulario dado.
+# Controlador de envio.
+@app.route('/enviar', methods=['POST'])
+# metodo de guardar los datos
+def enviar():  #Aqui realiza el envio de datos para ser guardados en la lista. 
+    if request.method == 'POST':
+# el mensaje de añadir un registro de un nuevo dato se muestra por codigo javascript en el html 
+        lista_Name = request.form['lista_Name']
+        lista_Email = request.form['lista_Email']
+        lista_Prioridad = request.form['lista_Prioridad']
+
+        if lista_Name == '' or lista_Email == '' or lista_Prioridad=='': #El mensaje esta por codigo javascript dentro del HTML
+                return redirect(url_for('panelPrincipal'))
+        else:
+                ListasApp.append(
+                    {'lista_Name': lista_Name,
+                     'lista_Email': lista_Email, 
+                     'lista_Prioridad': lista_Prioridad})
+
+                return redirect(url_for('panelPrincipal'))
+
+
+
+
 
 
 # ejecutar del main principal de la pagina To DO local host 
