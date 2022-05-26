@@ -3,21 +3,25 @@
 # importar la libreria flask
 # En este apartado se añade la libreria de flask, entre otras para hacer el llamado y otras funcionalidades de la pagina TO Do.
 from flask import Flask, render_template, redirect, request, url_for
+
 #---------------------------------------------------------------------------
 # Este es el nombre para llamar a los templates de python, ya que se inicializa y se llama a traves del templates donde tenemos nuestra carpeta.
 app = Flask(__name__, template_folder='templates')
+
 #---------------------------------------------------------------------------
 # Este es el arreglo para almacenar las tareas en forma de lista.
 ListasApp = [] # arreglo de la lista
 #---------------------------------------------------------------------------
 #Password para tener acceso a dicha aplicacion mediante el uso del secret key
 app.secret_key = 'jhostyn2022'    
+
 #---------------------------------------------------------------------------
 # Este es el primer paso ver las listas de las tareas pendientes
 # Esta es la ruta raiz donde esta nuestro html controlador  raiz
+
 @app.route('/')
 # llamar a index.html en la ruta principal
-def panelPrincipal():   # es la ruta principal del primer controlador raiz
+def panelPrincipal():
     return render_template('/index.html', ListasApp=ListasApp)
 
 #---------------------------------------------------------------------------
@@ -43,8 +47,6 @@ def enviar():  #Aqui realiza el envio de datos para ser guardados en la lista.
                 return redirect(url_for('panelPrincipal'))
 
 
-
-
 #---------------------------------------------------------------------------
 #Controlador de la ruta para borrar todos los datos encontrados en la lista 
 #Controlador de borrar registros 
@@ -53,9 +55,22 @@ def borrar():              # La funcion de envio de mensaje borrado se hace medi
      ListasApp.clear()
      return redirect(url_for('panelPrincipal'))
   
+  
+  
+#---------------------------------------------------------------------------
+#Controlador de extra eliminar elementos uno por uno 
+
+
+
+
+
+
+
+
 
 
 
 # ejecutar del main principal de la pagina To DO local host 
 if __name__ == '__main__':
+
     app.run(debug=True)
