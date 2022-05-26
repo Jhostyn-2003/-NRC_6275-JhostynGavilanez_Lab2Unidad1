@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP TO DO</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+   
+
+</head>
+
+<body>
+
+    <!--Este es el head de nuestra aplicacion la parte de arriba, que se encuentra una franja naranja -->
+    <div class="page-header bg-warning text-white text-center">
+        <h1>APPW: Desarrollo web con Flask </h1>
+    </div>
+
+    <!-- Inicio del Formulario del controlador de envio primera parte -->
+    <!--Aqui es donde se hace el llamdo del controlodor del formulario que es del Envio de datos  -->
+    <form action="" method="POST" style="width: 35%; margin: 0 auto;">
+        <!--titulo de donde se añade el formulario-->
+        <legend class="text-center  text-warning"> TO DO ADD</legend>
+        <!-- 1. Text Input -->
+        <div class="form-group">
+            <label for="username">Tarea: </label>
+            <input type="text" class="form-control border border-secondary" id="username" aria-describedby="Username"
+                placeholder="Enter Username" name="lista_Name">
+        </div>
+        <!-- 2. Email  -->
+        <div class="form-group">
+            <label for="email">Email: </label>
+            <input type="text" class="form-control border border-secondary" id="email" aria-describedby="email"
+                placeholder="Enter Email" name="lista_Email">
+        </div>
+
+        <!-- 3. Single Select -->
+        <div class="form-group">
+            <label for="singleselect">Prioridad: </label>
+            <select class="form-control  border border-secondary" id="singleselect" name="lista_Prioridad">
+                <option>Bajo</option>
+                <option>Medio</option>
+                <option>Alto</option>
+
+            </select>
+        </div>
+        <!-- 9. Submit Button de agregar tarea -->
+        <button type="submit" class="btn btn-success  p-2 my-3 bg-warning " onclick="validacionRegistro()"
+            value="registro">Agregar a la tarea</button>
+
+    </form>
+    <!-- End of Form -->
+
+
+
+
+    <!--Este es el footer de nuestro archivo -->
+    <footer class="bg-dark text-center text-white">
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(253, 190, 16, 0.897);">
+            © 2022 Jhostyn Javier Gavilánez Suárez
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+
+
+    <!-- Bootstrap 5 Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+    </script>
+
+    <!-- Scripts DJANJO -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
