@@ -6,7 +6,7 @@ guardar datos de manera sastifactoria, obteniendo el ingreso de datos y la elimi
 
 En este caso, se obtuvieron la creacion de los 3 controladores, como son el de /raiz, el metodo de envio y el metodo de borrar datos, dentro de dicho arreglo. 
 
-
+En este Laboratorio, he utilizado lenguaje de Pyhon, Html, Boostrap, Javascript y CSS.
 
 
 
