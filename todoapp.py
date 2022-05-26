@@ -17,7 +17,7 @@ app.secret_key = 'jhostyn2022'
 # Esta es la ruta raiz donde esta nuestro html controlador  raiz
 @app.route('/')
 # llamar a index.html en la ruta principal
-def panelPrincipal():
+def panelPrincipal():   # es la ruta principal del primer controlador raiz
     return render_template('/index.html', ListasApp=ListasApp)
 
 
