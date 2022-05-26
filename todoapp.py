@@ -45,6 +45,15 @@ def enviar():  #Aqui realiza el envio de datos para ser guardados en la lista.
 
 
 
+#---------------------------------------------------------------------------
+#Controlador de la ruta para borrar todos los datos encontrados en la lista 
+#Controlador de borrar registros 
+@app.route('/borrar', methods=['POST'])
+def borrar():              # La funcion de envio de mensaje borrado se hace mediante codigo Javascript
+     ListasApp.clear()
+     return redirect(url_for('panelPrincipal'))
+  
+
 
 
 # ejecutar del main principal de la pagina To DO local host 
