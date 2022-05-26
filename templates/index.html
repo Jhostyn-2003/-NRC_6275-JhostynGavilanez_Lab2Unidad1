@@ -57,7 +57,15 @@
     </form>
     <!-- End of Form -->
 
-
+ <!--Formulario de borrar datos de toda la lista, del controlador borrar -->
+ <form action="{{url_for('borrar')}}" method="POST" style="width: 35%; margin: 0 auto;">
+    <!-- 4. Text de la tarea  de eliminar tarea -->
+    <div class="form-group">
+        <label for="idTarea">Deseas Eliminar toda la Tarea ?? </label>
+        <button type="submit" class="btn btn-success  p-2 my-3 bg-warning" onclick="ListaEliminada()"
+            value="eliminarTodos">Eliminar Toda la Lista</button>
+    </div>
+</form>
 
 
     <!--Este es el footer de nuestro archivo -->
